@@ -1,0 +1,141 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageVersion>7.0.0.1</PackageVersion>
+        <Title>Maui binding of the official RuStore SDK for receiving push notifications on Android.</Title>
+        <Authors>V.Zolotov</Authors>
+        <Copyright>V.Zolotov</Copyright>
+        <PackageTags>RuStore, rustore, rustore push</PackageTags>
+        <PackageId>rustore.push.maui</PackageId>
+        <PackageProjectUrl>https://gitverse.ru/rustore.maui/push.android</PackageProjectUrl>
+        <RepositoryUrl>https://gitverse.ru/rustore.maui/push.android</RepositoryUrl>
+        <PackageReadmeFile>README.en.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+        <Description>Push notifycation for RuStore. RuStore is russian Google Play like service</Description>
+        
+        <TargetFramework>net9.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+        <NoWarn>NU1605</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.en.md" Pack="true" PackagePath="\"/>
+        <None Include="..\.github\workflows\release.yml" Pack="false" PackagePath="\"/>
+        <None Include="..\LICENSE.txt" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <!-- RuStore SDK из собственного репозитория -->
+        <AndroidMavenLibrary Include="ru.rustore.sdk:pushclient" Version="7.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" />
+        <AndroidMavenLibrary Include="ru.rustore.sdk:core" Version="8.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" />
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:push-core" Version="7.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" Bind="false" />
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:push-core-remote-config" Version="7.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" Bind="false" />
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:push-common" Version="7.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven"/>
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:push-core-network" Version="7.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" Bind="false" />
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:coreui" Version="8.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" Bind="false" />
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:metrics" Version="8.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" Bind="false" />
+
+        <AndroidMavenLibrary Include="ru.rustore.sdk:reactive" Version="8.0.0" Repository="https://artifactory-external.vkpartner.ru/artifactory/maven" Bind="false"/>
+
+        <!-- HMS из Huawei репозитория -->
+        <AndroidMavenLibrary Include="com.huawei.hms:push" Version="6.12.0.300" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:opendevice" Version="6.12.0.300" Repository="https://developer.huawei.com/repo/" Bind="false" JavaArtifact="com.huawei.android.hms:security-encrypt:1.2.0.307;com.huawei.android.hms:security-base:1.2.0.307;com.huawei.hms:base:6.11.0.302;javax.inject:javax.inject:1" />
+        <AndroidMavenLibrary Include="com.huawei.android.hms:security-encrypt" Version="1.2.0.307" Repository="https://developer.huawei.com/repo/" Bind="false" JavaArtifact="com.huawei.android.hms:security-base:1.2.0.307;com.huawei.hms:base:6.11.0.302;javax.inject:javax.inject:1" />
+        <AndroidMavenLibrary Include="com.huawei.android.hms:security-base" Version="1.2.0.307" Repository="https://developer.huawei.com/repo/" Bind="false" JavaArtifact="com.huawei.hms:base:6.11.0.302;javax.inject:javax.inject:1" />
+        <AndroidMavenLibrary Include="com.huawei.hms:base" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:baselegacyapi" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:stats" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:ui" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:device" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:log" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hmf:tasks" Version="1.5.2.206" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:availableupdate" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:hatool" Version="6.11.0.302" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:network-grs" Version="6.0.11.300" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.agconnect:agconnect-core" Version="1.8.1.300" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.android.hms:security-ssl" Version="1.2.0.307" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:network-common" Version="6.0.11.300" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <AndroidMavenLibrary Include="com.huawei.hms:network-framework-compat" Version="6.0.11.300" Repository="https://developer.huawei.com/repo/" Bind="false" />
+        <!-- RuStore SDK внешние зависимости -->
+        <AndroidMavenLibrary Include="ru.ok.tracer:tracer-base" Version="1.1.1" Bind="false" />
+        <AndroidMavenLibrary Include="ru.ok.tracer:tracer-manifest" Version="1.1.1" Bind="false" />
+        <AndroidMavenLibrary Include="ru.ok.tracer:tracer-lite-commons" Version="1.1.1" Bind="false" />
+        <AndroidMavenLibrary Include="ru.ok.tracer:tracer-lite-crash-report" Version="1.1.1" Bind="false" />
+
+    </ItemGroup>
+    <ItemGroup>
+
+        <PackageReference Include="Square.OkHttp3" Version="4.10.0" />
+        <PackageReference Include="Square.OkIO.JVM" Version="3.0.0"/>
+
+        <!-- Kotlin runtime -->
+        <PackageReference Include="Xamarin.AndroidX.SavedState" Version="1.3.3" />
+        <PackageReference Include="Xamarin.AndroidX.SavedState.SavedState.Android" Version="1.3.3" />
+        <PackageReference Include="Xamarin.AndroidX.SavedState.SavedState.Ktx" Version="1.3.3" />
+        <PackageReference Include="Xamarin.Kotlin.StdLib" Version="2.2.20" />
+        <PackageReference Include="Xamarin.Kotlin.StdLib.Common" Version="2.0.21.5" />
+        <PackageReference Include="Xamarin.Kotlin.StdLib.Jdk8" Version="2.2.20" />
+        <PackageReference Include="Xamarin.KotlinX.Coroutines.Core" Version="1.10.2.1" />
+        <PackageReference Include="Xamarin.KotlinX.Coroutines.Core.Jvm" Version="1.10.2.1" />
+        <PackageReference Include="Xamarin.KotlinX.Coroutines.Android" Version="1.10.2.1" />
+
+        <!-- AndroidX base -->
+        <PackageReference Include="Xamarin.AndroidX.Core" Version="1.17.0" />
+        <PackageReference Include="Xamarin.AndroidX.Core.Core.Ktx" Version="1.17.0" />
+        <PackageReference Include="Xamarin.AndroidX.Annotation" Version="1.9.1.5" />
+        <PackageReference Include="Xamarin.AndroidX.Annotation.Experimental" Version="1.5.1.1" />
+        <PackageReference Include="Xamarin.AndroidX.Startup.StartupRuntime" Version="1.2.0.5" />
+        <PackageReference Include="Xamarin.AndroidX.Work.Work.Runtime.Ktx" Version="2.10.5" />
+        <PackageReference Include="Xamarin.AndroidX.Room.Room.Ktx" Version="2.8.1" />
+        <PackageReference Include="Xamarin.AndroidX.Sqlite.Framework" Version="2.6.1" />
+        <PackageReference Include="Xamarin.AndroidX.DataStore.Preferences" Version="1.1.7.1" />
+
+        <!-- Lifecycle family (чтобы не было конфликтов) -->
+        <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common" Version="2.9.4" />
+        <PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime" Version="2.9.4" />
+        <PackageReference Include="Xamarin.AndroidX.Lifecycle.Runtime.Android" Version="2.9.4" />
+        <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.9.4" />
+        <PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData.Core" Version="2.9.4" />
+
+        <!-- Material & UI -->
+        <PackageReference Include="Xamarin.Google.Android.Material" Version="1.13.0" />
+
+
+        <!-- Firebase core set -->
+        <PackageReference Include="Xamarin.Firebase.Common" Version="122.0.1" />
+        <PackageReference Include="Xamarin.Firebase.Common.Ktx" Version="121.0.0.7" />
+        <PackageReference Include="Xamarin.Firebase.Components" Version="119.0.0.1" />
+        <PackageReference Include="Xamarin.Firebase.Datatransport" Version="120.0.1" />
+        <PackageReference Include="Xamarin.Firebase.Encoders" Version="117.0.0.23" />
+        <PackageReference Include="Xamarin.Firebase.Encoders.JSON" Version="118.0.1.15" />
+        <PackageReference Include="Xamarin.Firebase.Encoders.Proto" Version="116.0.0.18" />
+        <PackageReference Include="Xamarin.Firebase.Installations" Version="119.0.1" />
+        <PackageReference Include="Xamarin.Firebase.Installations.InterOp" Version="117.2.0.11" />
+        <PackageReference Include="Xamarin.Firebase.Measurement.Connector" Version="120.0.1.11" />
+
+        <!-- Google Play Services -->
+        <PackageReference Include="Xamarin.GooglePlayServices.Base" Version="118.9.0" />
+        <PackageReference Include="Xamarin.GooglePlayServices.Basement" Version="118.9.0" />
+        <PackageReference Include="Xamarin.GooglePlayServices.Tasks" Version="118.4.0" />
+        <PackageReference Include="Xamarin.GooglePlayServices.CloudMessaging" Version="117.3.0.7" />
+
+        <PackageReference Include="Xamarin.GooglePlayServices.Stats" Version="117.1.0.7" />
+        <PackageReference Include="Xamarin.Google.Android.DataTransport.TransportApi" Version="4.0.0.5" />
+
+        <!-- Guava / DataTransport -->
+        <PackageReference Include="Xamarin.Google.Guava.ListenableFuture" Version="1.0.0.29" />
+        <PackageReference Include="Xamarin.Google.Android.DataTransport.TransportBackendCct" Version="4.0.0.5" />
+        <PackageReference Include="Xamarin.Google.Android.DataTransport.TransportRuntime" Version="4.0.0.5" />
+
+        <PackageReference Include="Xamarin.JavaX.Inject" Version="1.0.0.21" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,14 @@
+﻿<metadata>
+  <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:-->
+  <remove-node path="/api/package[@name='com.vk.push.common.messaging']/class[@name='NotificationParams.CREATOR']"/>
+  <remove-node path="/api/package[@name='com.vk.push.common.messaging']/class[@name='RemoteMessage.CREATOR']"/>
+  <remove-node path="/api/package[@name='ru.rustore.sdk.pushclient.common.logger']
+                        /interface[@name='Logger']
+                        /method[@name='createLogger' and @parameter[@type='java.lang.String']]"/>
+  <remove-node path="/api/package[@name='okhttp3']" />
+  <remove-node path="/api/package[@name='okio']" />
+</metadata>
