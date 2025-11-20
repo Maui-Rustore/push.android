@@ -35,7 +35,7 @@ public class NotificationManagerWrapper
 
     public void ShowNotification(Context context, AppNotification data)
     {
-        // Создаём билдера уведомления
+        // Создаём билдер уведомления
         var builder = new NotificationCompat.Builder(context, data.ChannelId)
             .SetContentTitle(data.Title)
             .SetContentText(data.Message)

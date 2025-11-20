@@ -31,6 +31,14 @@
         <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <JavaMaximumHeapSize>4G</JavaMaximumHeapSize>
+        <!--<AndroidLinkTool>r8</AndroidLinkTool>-->
+        <AndroidKeyStore>true</AndroidKeyStore>
+        <AndroidSigningKeyStore>../../my-release-key.keystore</AndroidSigningKeyStore>
+        <AndroidSigningStorePass></AndroidSigningStorePass>
+        <AndroidSigningKeyAlias>alias_name</AndroidSigningKeyAlias>
+        <AndroidSigningKeyPass></AndroidSigningKeyPass>
+        <AndroidUseAapt2>True</AndroidUseAapt2>
     </PropertyGroup>
 
     <ItemGroup>
@@ -65,6 +73,7 @@
 
     <ItemGroup>
       <ProguardConfiguration Include="Platforms\Android\proguard.cfg" />
+        
     </ItemGroup>
 
     <ItemGroup>
