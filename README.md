@@ -2,6 +2,14 @@
 
 Биндинг официального SDK для получения пуш уведомлений для андроид.
 
+![Nuget](https://img.shields.io/nuget/dt/rustore.push.maui?label=Download&style=flat-square)
+## Nuget Package
+
+Установка __rustore.push.maui__ :
+
+```
+dotnet add package rustore.push.maui
+```
 ## Состав
 1. **maui.rustore.push - dotnet android binding native library**
 2. **Sample**

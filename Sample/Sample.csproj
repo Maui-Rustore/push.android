@@ -33,11 +33,7 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <JavaMaximumHeapSize>4G</JavaMaximumHeapSize>
         <!--<AndroidLinkTool>r8</AndroidLinkTool>-->
-        <AndroidKeyStore>true</AndroidKeyStore>
-        <AndroidSigningKeyStore>../../my-release-key.keystore</AndroidSigningKeyStore>
-        <AndroidSigningStorePass></AndroidSigningStorePass>
-        <AndroidSigningKeyAlias>alias_name</AndroidSigningKeyAlias>
-        <AndroidSigningKeyPass></AndroidSigningKeyPass>
+
         <AndroidUseAapt2>True</AndroidUseAapt2>
     </PropertyGroup>
 
